@@ -1,0 +1,37 @@
+write_files:
+  - path: /home/ec2-user/.ssh/id_rsa
+    content: |
+      -----BEGIN OPENSSH PRIVATE KEY-----
+      b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+      QyNTUxOQAAACBOGaZs4l/h4HraVJmeVFyFJfr0Fw/I+vfDlBtidcw7lQAAAKgn8mbqJ/Jm
+      6gAAAAtzc2gtZWQyNTUxOQAAACBOGaZs4l/h4HraVJmeVFyFJfr0Fw/I+vfDlBtidcw7lQ
+      AAAECfmWQgH4OjjhOhFC1KcrvNTpl4RPxhvekYzMm+hu75lU4ZpmziX+HgetpUmZ5UXIUl
+      +vQXD8j698OUG2J1zDuVAAAAJW5pcHVuLmNoYXdsYUBOaXB1bnMtTWFjQm9vay1Qcm8ubG
+      9jYWw=
+      -----END OPENSSH PRIVATE KEY-----
+    owner: ec2-user
+    permissions: "0600"
+
+  - path: /home/ec2-user/.ssh/config
+    content: |
+      Host github.com
+        User git
+        IdentityFile /home/ec2-user/.ssh/id_rsa
+        StrictHostKeyChecking no
+        LogLevel ERROR
+    owner: ec2-user
+    permissions: "0600"
+
+  - path: /home/ec2-user/clone_repo.sh
+    content: |
+      #!/bin/bash
+      eval "$(ssh-agent -s)"
+      ssh-add /home/ec2-user/.ssh/id_rsa
+      ssh-keyscan github.com >> /home/ec2-user/.ssh/known_hosts
+      git clone git@github.com:chakratech/infra.git /home/ec2-user/infra
+
+    owner: ec2-user
+    permissions: "0700"
+
+runcmd:
+  - sudo -u ec2-user /home/ec2-user/clone_repo.sh

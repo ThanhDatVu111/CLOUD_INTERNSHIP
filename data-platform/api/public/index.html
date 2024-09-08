@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Form</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body>
+  
+    <h1 class="text-4xl font-bold text-blue-500">Upload Materials Here</h1>
+    <div class="container">
+      <div class="fileContainer">
+      
+        <h2 class="text-3xl font-bold text-blue-500">Upload Files</h2>
+        <form id="uploadForm" method="POST" enctype="multipart/form-data">
+          <label for="file">Choose file:</label>
+          <input type="file" name="file" id="file" accept="image/*,application/pdf" multiple required >
+          <button type="submit">Upload</button>
+        </form>
+
+        <h2>File Preview</h2>
+        <div id="filePreviews"></div>
+      </div>
+
+      <div class="wholeVideoContainer">
+        <h2>Upload Video</h2>
+        <form id="uploadVideoForm" method="POST" enctype="multipart/form-data">
+          <label for="videoFile">Choose video:</label>
+          <input type="file" name="file" id="videoFile" accept="video/*" required>
+          <button type="submit">Upload</button>
+        </form>
+
+        <h2>Video Preview</h2>
+        <div id="videoContainer">
+          <video id="videoPreview" controls style="display:none;">
+            <source id="videoSource" src="" type="video/mp4" >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+      </div>
+    </div>
+  <script>
+    
+    document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const fileInput = document.getElementById('file');
+    const files = fileInput.files;
+    if (files.length === 0 || !files) {
+    alert('Please select at least one file to upload.');
+    return;
+   }
+
+    try {
+      for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+
+        // Step 1: Get the presigned URL from the server
+        const response = await fetch('/generate-presigned-url', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ filename: file.name })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to get presigned URL: ${response.statusText} (${response.status})`);
+        }
+
+        const data = await response.json();
+        const presignedUrl = data.url;
+
+        // Step 2: Upload the file to S3 using the presigned URL
+        const uploadResponse = await fetch(presignedUrl, {
+            method: 'PUT',
+            body: file,
+            headers: {
+                'Content-Type': file.type // Set the correct Content-Type here
+            }
+        });
+
+        if (!uploadResponse.ok) {
+            throw new Error(`Failed to upload file to S3: ${uploadResponse.statusText} (${uploadResponse.status})`);
+        }
+      }
+
+        alert('All Files uploaded successfully');
+
+        // Step 3: Update the thumbnail image
+        document.getElementById('file').value = '';
+        document.getElementById('filePreviews').innerHTML = '';
+
+    } catch (error) {
+        console.error('There was an error!', error);
+        alert(`An error occurred while uploading the file: ${error.message}`);
+    }
+});
+
+
+    document.getElementById('file').addEventListener('change', function () {
+      const fileInput = document.getElementById('file');
+      const files = Array.from(fileInput.files);
+
+      // Clear existing previews
+      const filePreviews = document.getElementById('filePreviews');
+      filePreviews.innerHTML = '';
+
+      // Display previews for selected files
+      files.forEach(file => {
+        const fileRow = document.createElement('div');
+        fileRow.classList.add('file-row');
+
+        const filePreview = document.createElement('img');
+        filePreview.classList.add('file-preview');
+        filePreview.src = URL.createObjectURL(file);
+        filePreview.alt = file.name;
+        filePreview.style.width = '80px';
+        filePreview.style.height = 'auto';
+        fileRow.appendChild(filePreview);
+
+        const fileName = document.createElement('span');
+        fileName.textContent = file.name;
+        fileRow.appendChild(fileName);
+
+        // Create delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', function () {
+          // Remove the file from the preview
+          fileRow.remove();
+
+          // Remove file from the file input
+          const updatedFiles = Array.from(fileInput.files).filter(f => f !== file);
+
+          const dataTransfer = new DataTransfer();
+          updatedFiles.forEach(f => dataTransfer.items.add(f));
+
+          // Update the input element with the new FileList
+          fileInput.files = dataTransfer.files;
+        });
+        fileRow.appendChild(deleteButton);
+
+        filePreviews.appendChild(fileRow);
+      });
+    });
+
+
+  document.getElementById('uploadVideoForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      const fileInput = document.getElementById('videoFile');
+      const file = fileInput.files[0]; // Get the selected file
+      try {
+          // Step 1: Get the presigned URL from the server
+          const response = await fetch('/generate-presigned-url', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ filename: file.name })
+          });
+          if (!response.ok) throw new Error('Failed to obtain presigned URL');
+          const data = await response.json();
+          const presignedUrl = data.url;
+          // Step 2: Upload the file to S3 using the presigned URL
+          const uploadResponse = await fetch(presignedUrl, {
+              method: 'PUT',
+              body: file, // Use the file directly as the body
+              headers: {
+                  'Content-Type': file.type // Set the correct Content-Type here
+              }
+          });
+          if (!uploadResponse.ok) throw new Error('Failed to upload file');
+
+          alert('File uploaded successfully');
+          var video = document.getElementById("videoPreview");
+          var source = document.getElementById("videoSource");
+          source.setAttribute("src", "");
+          video.load();
+          video.style.display = "none";
+          fileInput.value = '';
+      } catch (error) {
+          console.error('Error during file upload:', error);
+          alert('An error occurred while uploading the video.');
+      }
+  });
+
+  document.getElementById('videoFile').addEventListener('change', async function() {
+    const formData = new FormData();
+    formData.append('file', this.files[0]);
+    try {
+        const response = await fetch('/videoUpload', {
+          method: 'POST',
+          body: formData
+        });
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        // Update thumbnail image
+        document.getElementById('videoSource').src = '/videoThumbnail?' + new Date().getTime();
+        document.getElementById('videoPreview').load();
+        document.getElementById('videoPreview').style.display = 'block';
+      } catch (error) {
+        console.error('There was an error!', error);
+        alert('An error occurred while uploading the file.');
+      }
+  });
+
+  </script>
+</body>
+
+</html>
+

@@ -1,0 +1,150 @@
+[
+    {
+        "id": 0,
+        "title": "chem-lab",
+        "description": "This project is for chemical experiments",
+        "date": "07/7/2024",
+        "lastModified": "07/15/2024",
+        "lastModifiedBy": 0,
+        "thumbnail": "",
+        "owner": [0],
+        "contributors": [1, 2],
+        "labs": [
+            {
+                "title": "Lab A",
+                "description": "This is the first lab",
+                "thumbnail": "",
+                "date": "07/7/2024",
+                "function": "server/functions/lab1.js",
+                "locked": true,
+                "contributors": [0, 2],
+                "runs": [
+                    {"author": 0, "date": "07/7/2024", "status": "success", "results": "server/path/to/results1.json"},
+                    {"author": 2, "date": "07/8/2024", "status": "failed", "results": "server/path/to/results2.json"},
+                    {"author": 1, "date": "07/9/2024", "status": "success", "results": "server/path/to/results3.json"},
+                    {"author": 2, "date": "07/9/2024", "status": "pending", "results": "server/path/to/results4.json"}
+                ]
+            },
+            {
+                "title": "Lab B",
+                "description": "This is the second lab",
+                "thumbnail": "https://www.thoughtco.com/thmb/6MsMmUK27akFhb8i89kj95J5iko=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-545286316-433dd345105e4c6ebe4cdd8d2317fdaa.jpg",
+                "date": "07/17/2024",
+                "function": "server/functions/lab1.js",
+                "locked": false,
+                "contributors": [0, 2],
+                "runs": [
+                    {"author": 2, "date": "07/17/2024", "status": "success", "results": "server/path/to/results5.json"},
+                    {"author": 1, "date": "07/18/2024", "status": "failed", "results": "server/path/to/results6.json"},
+                    {"author": 2, "date": "07/19/2024", "status": "success", "results": "server/path/to/results7.json"},
+                    {"author": 0, "date": "07/19/2024", "status": "pending", "results": "server/path/to/results8.json"}
+                ]
+            },
+            {
+                "title": "Lab C",
+                "description": "This is the third lab",
+                "thumbnail": "",
+                "date": "07/7/2024",
+                "function": "server/functions/lab1.js",
+                "locked": true,
+                "contributors": [0, 2],
+                "runs": [
+                ]
+            },
+            {
+                "title": "Lab D",
+                "description": "This is the fourth lab",
+                "thumbnail": "",
+                "date": "07/17/2024",
+                "function": "server/functions/lab1.js",
+                "locked": false,
+                "contributors": [0, 2],
+                "runs": [
+                    {"author": 2, "date": "07/17/2024", "status": "success", "results": "server/path/to/results5.json"}
+                ]
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "title": "Biology Experiments",
+        "description": "This project is for biological experiments",
+        "date": "07/7/2024",
+        "lastModified": "07/11/2024",
+        "lastModifiedBy": 0,
+        "thumbnail": "",
+        "owner": [0],
+        "contributors": [1, 2],
+        "labs": [
+            {
+                "title": "bio Lab A",
+                "description": "This is the first lab",
+                "thumbnail": "",
+                "date": "07/7/2024",
+                "function": "server/functions/lab1.js",
+                "locked": false,
+                "contributors": [0, 2],
+                "runs": [
+                    {"author": 0, "date": "07/7/2024", "status": "success", "results": "server/path/to/results1.json"},
+                    {"author": 2, "date": "07/8/2024", "status": "failed", "results": "server/path/to/results2.json"}
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Project 3",
+        "description": "This project is for test experiments",
+        "date": "07/7/2024",
+        "lastModified": "07/11/2024",
+        "lastModifiedBy": 0,
+        "thumbnail": "",
+        "owner": [0],
+        "contributors": [1, 2],
+        "labs": [
+            {
+                "title": "Lab A",
+                "description": "This is the first lab",
+                "thumbnail": "",
+                "date": "07/17/2024",
+                "function": "server/functions/lab1.js",
+                "locked": false,
+                "contributors": [0, 2],
+                "runs": [
+                    {"author": 2, "date": "07/17/2024", "status": "success", "results": "server/path/to/results5.json"},
+                    {"author": 1, "date": "07/18/2024", "status": "failed", "results": "server/path/to/results6.json"},
+                    {"author": 2, "date": "07/19/2024", "status": "success", "results": "server/path/to/results7.json"},
+                    {"author": 0, "date": "07/19/2024", "status": "pending", "results": "server/path/to/results8.json"}
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Project 3 Copy",
+        "description": "",
+        "date": "07/7/2024",
+        "lastModified": "07/11/2024",
+        "lastModifiedBy": 0,
+        "thumbnail": "",
+        "owner": [0],
+        "contributors": [1, 2],
+        "labs": [
+            {
+                "title": "Lab A",
+                "description": "This is the first lab",
+                "thumbnail": "",
+                "date": "07/17/2024",
+                "function": "server/functions/lab1.js",
+                "locked": false,
+                "contributors": [0, 2],
+                "runs": [
+                    {"author": 2, "date": "07/17/2024", "status": "success", "results": "server/path/to/results5.json"},
+                    {"author": 1, "date": "07/18/2024", "status": "failed", "results": "server/path/to/results6.json"},
+                    {"author": 2, "date": "07/19/2024", "status": "success", "results": "server/path/to/results7.json"},
+                    {"author": 0, "date": "07/19/2024", "status": "pending", "results": "server/path/to/results8.json"}
+                ]
+            }
+        ]
+    }
+]

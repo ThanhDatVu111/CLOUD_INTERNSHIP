@@ -1,0 +1,1 @@
+Download/clone the folder. Then open a terimnal and redirect yourself into the folder. Ensure that the "Imageuploads" and "Textuploads" directories exist, if not create them. Then run "go run .". After that open a broswer tab and type in "localhost:3000" to view the file/text uploader.

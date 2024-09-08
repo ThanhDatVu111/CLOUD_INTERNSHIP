@@ -1,0 +1,105 @@
+[
+    {
+        "id": 0,
+        "title": "my report",
+        "description": "This is my first report",
+        "date": "07/7/2024",
+        "lastModified": "07/11/2024",
+        "lastModifiedBy": 0,
+        "thumbnail": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+        "owner": [0],
+        "contributors": [1, 2],
+        "logs": [
+            {
+                "title": "first log",
+                "description": "This is my first log",
+                "comment": "server/path/to/log1.md",
+                "date": "07/7/2024",
+                "lastModified": "07/11/2024",
+                "lastModifiedBy": 0,
+                "locked": true,
+                "contributors": [0, 2],
+                "tags": [
+                    "important",
+                    "tag2"
+                ],
+                "files": [
+                    "server/path/to/download.pdf",
+                    "server/path/to/capture2024.png"
+                ],
+                "linkedProjectLabs": [{"projectID": 0, "labNumber": 0}, {"projectID": 0, "labNumber": 1}]
+            },
+            {
+                "title": "New Log",
+                "description": "Getting the hang of this now!",
+                "comment": "server/path/to/log2.md",
+                "date": "07/8/2024",
+                "lastModified": "07/8/2024",
+                "lastModifiedBy": 1,
+                "locked": false,
+                "contributors": [1],
+                "tags": [],
+                "files": [],
+                "linkedProjectLabs": []
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "title": "Private Report",
+        "description": "Still under research",
+        "date": "07/21/2024",
+        "lastModified": "07/29/2024",
+        "lastModifiedBy": 0,
+        "thumbnail": "https://www.labiotech.eu/wp-content/uploads/2015/11/genentech-history-biotech-genetic-engineering-cloning.jpg",
+        "owner": [2],
+        "contributors": [0],
+        "logs": [
+            {
+                "title": "amazing discovery",
+                "description": "I can't believe I found this",
+                "comment": "server/path/to/log5.md",
+                "date": "07/22/2024",
+                "lastModified": "07/22/2024",
+                "lastModifiedBy": 0,
+                "locked": false,
+                "contributors": [0],
+                "tags": [
+                    "private"
+                ],
+                "files": [
+                    "server/path/to/secret.mp4"
+                ],
+                "linkedProjectLabs": []
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "my ideas",
+        "description": "Quick place to jot down stuff.",
+        "date": "07/22/2024",
+        "lastModified": "07/27/2024",
+        "lastModifiedBy": 0,
+        "thumbnail": "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
+        "owner": [0],
+        "contributors": [],
+        "logs": [
+            {
+                "title": "concept",
+                "description": "a quick comment",
+                "comment": "server/path/to/log8.md",
+                "date": "07/22/2024",
+                "lastModified": "07/22/2024",
+                "lastModifiedBy": 0,
+                "locked": true,
+                "contributors": [0],
+                "tags": [
+                ],
+                "files": [
+                ],
+                "linkedProjectLabs": []
+            }
+        ]
+    }
+]

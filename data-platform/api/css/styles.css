@@ -1,0 +1,159 @@
+/* styles.css */
+
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f5f1;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: #2a9d8f;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.fileContainer,
+.textContainer,
+.wholeVideoContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+input[type="file"] {
+  margin: 10px 0;
+  padding: 10px;
+  background-color:#21867a;
+  color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  max-width: 280px;
+}
+
+/* Style the file upload button */
+input[type="file"]::-webkit-file-upload-button{
+  padding: 10px 20px;
+  background-color:#fff;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid #ccc; 
+}
+
+
+input[type="text"] {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 280px;
+}
+
+button { /* The Submit Button*/
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #2a9d8f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #21867a;
+}
+
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.imageContainer img {
+  max-width: 100%;
+  max-height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+
+#videoContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#videoPreview {
+  max-width: 100%;
+  max-height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fileContainer,
+  .textContainer,
+  .wholeVideoContainer {
+    margin: 10px 0;
+  }
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.file-preview {
+  width: 80px; /* Fixed width for file previews */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px;
+}
+.delete-button {
+  cursor: pointer;
+  color: red;
+  margin-left: 10px;
+}

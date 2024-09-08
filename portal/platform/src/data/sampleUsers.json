@@ -1,0 +1,92 @@
+[
+    {
+        "id": 0,
+        "name": "Jane Doe",
+        "password": "password123",
+        "mail": "janedoe@mail.com",
+        "phone": null,
+        "pfp": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+
+        "title": "Intern",
+        "department": "Computing",
+        "status": "online",
+
+        "calendar": [
+            {
+                "date": "08/10/2024",
+                "time": "09:00",
+                "description": "Meeting with supervisor"
+            },
+            {
+                "date": "08/24/2024",
+                "time": "12:00",
+                "description": "Platform development"
+            },
+            {
+                "date": "08/24/2024",
+                "time": null,
+                "description": "Untitled Event"
+            },
+            {
+                "date": "08/30/2024",
+                "time": "15:45",
+                "description": "Site due"
+            },
+            {
+                "date": "08/04/2024",
+                "time": null,
+                "description": "Workshop"
+            }
+        ],
+
+        "ownedProjects": [0, 2],
+        "contributedProjects": [0, 1, 2],
+
+        "ownedReports": [0, 2],
+        "contributedReports": [0, 1, 2]
+    },
+    {
+        "id": 1,
+        "name": "John Doe",
+        "password": "johniscool",
+        "mail": "johndoe@mail.com",
+        "phone": 1234567890,
+        "pfp": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+
+        "title": "Intern",
+        "department": "Engineering",
+        "status": "offline",
+
+        "calendar": [
+
+        ],
+
+        "ownedProjects": [],
+        "contributedProjects": [0, 1],
+
+        "ownedReports": [],
+        "contributedReports": [0, 1]
+    },
+    {
+        "id": 2,
+        "name": "Fred Smith",
+        "password": "july23",
+        "mail": "fredsmith@mail.com",
+        "phone": 1112223333,
+        "pfp": "",
+
+        "title": "Intern",
+        "department": "Computing",
+        "status": "discharged",
+
+        "calendar": [
+
+        ],
+
+        "ownedProjects": [1],
+        "contributedProjects": [0, 1],
+
+        "ownedReports": [1],
+        "contributedReports": [0, 1]
+    }
+]
