@@ -5,32 +5,31 @@ Project Overview
 
 During my internship at ChakraTech, a startup company, I worked on developing cloud infrastructure components using Terraform and Golang. This project demonstrates my skills in cloud computing, infrastructure as code, AWS services, and backend development.
 
-## Important Note
-This repository reflects my personal contributions up to August 2024. As other interns continued working on the project after my offboarding process, this codebase may not represent the final state of the project and may not be fully functional as a standalone system.
-Project Structure and Technologies
+## Project Structure and Technologies
 
-## The project is organized into several main components:
+The project is organized into several main components:
+
 ### Data Platform
 
 data-platform/
-
-api/: API implementation using Golang
-
-cmd/: Command-line tools for various data platform operations
-
-config/: Configuration files for the data platform
-
-css/: Stylesheets for any web interfaces
-
-internal/: Internal packages used across the data platform
-
-pkg/: Reusable Golang packages
-
-public/: Public assets for web interfaces
-
-routes/: API route definitions
-
-videoUploads/: Handling video upload functionality
+  
+  - api/: API implementation using Golang
+  
+  - cmd/: Command-line tools for various data platform operations
+  
+  - config/: Configuration files for the data platform
+  
+  - css/: Stylesheets for any web interfaces
+  
+  - internal/: Internal packages used across the data platform
+  
+  - pkg/: Reusable Golang packages
+  
+  - public/: Public assets for web interfaces
+  
+  - routes/: API route definitions
+  
+  - videoUploads/: Handling video upload functionality
 
 ***Key features:***
 
@@ -43,30 +42,30 @@ Command-line tools for data platform management
 ### Infrastructure (infra)
 
 infra/
-
-.venv/: Python virtual environment for any Python-based tools
-
-cloud/: Cloud infrastructure code
-
-acm/: AWS Certificate Manager configurations
-
-application-load-balancer/: Load balancer setup using Terraform
-
-ec2/: EC2 instance configurations
-
-enc/: Encryption-related code and configurations
-
-rds/: RDS database setup using Terraform
-
-s3_server/: S3 server configurations
-
-s3_storage/: S3 storage setup using Terraform
-
-sagemaker/: SageMaker configurations for machine learning tasks
-
-scripts/: Infrastructure management scripts
-
-vpn/: VPN setup for secure access
+  
+  - .venv/: Python virtual environment for any Python-based tools
+  
+  - cloud/: Cloud infrastructure code
+  
+  - acm/: AWS Certificate Manager configurations
+  
+  - application-load-balancer/: Load balancer setup using Terraform
+  
+  - ec2/: EC2 instance configurations
+  
+  - enc/: Encryption-related code and configurations
+  
+  - rds/: RDS database setup using Terraform
+  
+  - s3_server/: S3 server configurations
+  
+  - s3_storage/: S3 storage setup using Terraform
+  
+  - sagemaker/: SageMaker configurations for machine learning tasks
+  
+  - scripts/: Infrastructure management scripts
+  
+  - vpn/: VPN setup for secure access
 
 ***Key features:***
 
@@ -80,17 +79,17 @@ Infrastructure as Code (IaC) approach for maintainable and versioned infrastruct
 
 onboarding-setup/
 
-git.md: Git workflow and best practices
-
-aws-setup.md: Guide for setting up AWS CLI and permissions
-
-terraform-intro.md: Introduction to Terraform and its usage in the project
-
-golang-guide.md: Golang setup and coding standards
-
-IT-CONTRIB.md: Contribution guidelines and code review process
-
-README.md: Overview of the onboarding process
+  - git.md: Git workflow and best practices
+  
+  - aws-setup.md: Guide for setting up AWS CLI and permissions
+  
+  - terraform-intro.md: Introduction to Terraform and its usage in the project
+  
+  - golang-guide.md: Golang setup and coding standards
+  
+  - IT-CONTRIB.md: Contribution guidelines and code review process
+  
+  - README.md: Overview of how to use VSCODE 
 
 ***Key features:***
 
@@ -100,15 +99,15 @@ To provide comprehensive guidance for new interns on tools, technologies, and wo
 
 portal/
 
-platform/: Core platform code
-
-node_modules/: Node.js dependencies
-
-public/: Public assets for the web portal
-
-src/: Source code for the web application
-
-project/: Project-specific customizations and features
+  - platform/: Core platform code
+  
+  - node_modules/: Node.js dependencies
+  
+  - public/: Public assets for the web portal
+  
+  - src/: Source code for the web application
+  
+  - project/: Project-specific customizations and features
 
 ***Key features:***
 
@@ -133,6 +132,9 @@ Contributing to the portal's platform and project-specific code
 
 Developing onboarding documentation to facilitate knowledge transfer
 
+## Important Note
+This repository reflects my personal contributions up to August 2024. As other interns continued working on the project after my offboarding process, this codebase may not represent the final state of the project and may not be fully functional as a standalone system.
+
 ***Running the Project***
 While this repository contains Makefiles and Dockerfiles, please note that running the entire system may not be possible due to:
 
@@ -149,21 +151,21 @@ The primary purpose of this repository is to demonstrate the code and infrastruc
 ## Skills Demonstrated
 This project showcases my experience with:
 
-Cloud infrastructure design and implementation
+***Cloud infrastructure design and implementation***
 
-AWS services (EC2, S3, RDS, SageMaker, etc.)
+***AWS services (EC2, S3, RDS, SageMaker, etc.)***
 
-Infrastructure as Code using Terraform
+***Infrastructure as Code using Terraform***
 
-Golang development for backend services and AWS interactions
+***Golang development for backend services and AWS interactions***
 
-API development
+***API development***
 
-Docker containerization
+***Docker containerization***
 
-Makefile usage for project management
+***Makefile usage for project management***
 
-Technical documentation and onboarding material creation
+***Technical documentation and onboarding material creation***
 
 ## Contact
 For any questions regarding my contributions or to discuss this project further, please feel free to contact me at thanhdatvu.203@gmail.com.
